@@ -3,7 +3,10 @@ package com.example.demo.dao;
 import com.example.demo.pojo.MybatisDemo;
 import com.example.demo.pojo.MybatisDemoExample;
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -32,4 +35,9 @@ public interface MybatisDemoMapper {
 
     List<MybatisDemo> selectByName(String name);
 
+
+
+    List<MybatisDemo> selectByNameByLogic(RowBounds rowBounds,@Param("name")String name);
+
+    List<MybatisDemo> selectByNameByMysql(Map<String,Object> map);
 }

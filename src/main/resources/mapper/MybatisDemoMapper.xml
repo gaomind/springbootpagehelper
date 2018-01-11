@@ -182,4 +182,12 @@
   <select id="selectByName" parameterType="String" resultMap="BaseResultMap">
     SELECT * FROM MybatisDemo WHERE m_name =#{mName,jdbcType=VARCHAR} ORDER BY id
   </select>
+
+  <select id="selectByNameByLogic" parameterType="String" resultMap="BaseResultMap">
+    SELECT * FROM MybatisDemo WHERE m_name=#{name,jdbcType=VARCHAR}  order By id
+  </select>
+
+  <select id="selectByNameByMysql" parameterType="Map" resultMap="BaseResultMap">
+     SELECT * FROM MybatisDemo  WHERE m_name=#{name,jdbcType=VARCHAR}order By id limit #{start},#{pagesize}
+  </select>
 </mapper>
